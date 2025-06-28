@@ -19,3 +19,4 @@
       - SYSADMIN is developers role for creating (therefore, most used one), while SECURITYADMIN and USERADMIN are for gatekeeping and enforcement, respectively.
       - There is also ORGADMIN role for creating new Snowflake accounts and can edit high-level configuration setttings
   - Discretionary Access Control (DAC) = another Snowflake access model which tells that the creator of database also owns it
+- In Snowflake ROLES *own* items and are *awarded* rights and priviliges
