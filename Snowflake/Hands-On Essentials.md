@@ -44,10 +44,18 @@ create or replace table ROOT_DEPTH (
    );
 ```
 - Renaming a table:
-```
+``` sql
 alter table garden_plants.veggies.root_size
 rename to garden_plants.veggies.root_depth;
 ```
+- Moving a table:
+``` sql
+alter table garden_plants.veggies.root_size
+rename to garden_plants.fruits.root_depth;
+```
+- Vieving a definition of a table:
+![DWW_052](https://github.com/user-attachments/assets/cc8164c1-e7f1-47db-8076-91edaeb0a021)
+
 - 
 
 ## Lesson 4 (Tables, Data Types, and Loading Data)
