@@ -20,3 +20,18 @@
       - There is also ORGADMIN role for creating new Snowflake accounts and can edit high-level configuration setttings
   - Discretionary Access Control (DAC) = another Snowflake access model which tells that the creator of database also owns it
 - In Snowflake ROLES *own* items and are *awarded* rights and priviliges
+- Each USER has a DEFAULT ROLE role assigned, e.g. ACCOUNTADMIN - this can be changed - also, when you log out and log back in, your role will revert to the default
+- **Data** is **stored** in **databases** and any **processing** of data is done by a **warehouse**
+  - Processing units called warehouses are under Admin tab
+
+## Lesson 3 (Data Containers):
+
+## Lesson 4: Tables, Data Types, and Loading Data
+## Lesson 5: Worksheets & Warehouses
+## Lesson 6: Meet DORA!
+## Lesson 7: The Load Data Wizard
+## Lesson 8: Notebooks and Forms
+## Lesson 9: Staging Data
+## Lesson 10: Data Storage Structures
+## Lesson 11: Intro to Semi-Structured Data
+## Lesson 12: Nested Semi-Structured Data
