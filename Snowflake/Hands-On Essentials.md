@@ -1,6 +1,6 @@
 # Badge 1: Data Warehousing Workshop
 
-## Lesson 2 (Identity and Access):
+## Lesson 2 (Identity and Access)
 - Databases are used to group datasets (tables) together
 - A second-level organizational grouping, within a database, is called a schema
 - Snowflake automatically creates 2 schemas:
@@ -24,14 +24,23 @@
 - **Data** is **stored** in **databases** and any **processing** of data is done by a **warehouse**
   - Processing units called warehouses are under Admin tab
 
-## Lesson 3 (Data Containers):
+## Lesson 3 (Data Containers)
+- 
 
-## Lesson 4: Tables, Data Types, and Loading Data
-## Lesson 5: Worksheets & Warehouses
-## Lesson 6: Meet DORA!
-## Lesson 7: The Load Data Wizard
-## Lesson 8: Notebooks and Forms
-## Lesson 9: Staging Data
-## Lesson 10: Data Storage Structures
-## Lesson 11: Intro to Semi-Structured Data
-## Lesson 12: Nested Semi-Structured Data
+## Lesson 4 (Tables, Data Types, and Loading Data)
+
+## Lesson 5 (Worksheets & Warehouses)
+
+## Lesson 6 (Meet DORA!)
+
+## Lesson 7 (The Load Data Wizard)
+
+## Lesson 8 (Notebooks and Forms)
+
+## Lesson 9 (Staging Data)
+
+## Lesson 10:( Data Storage Structures)
+
+## Lesson 11:( Intro to Semi-Structured Data)
+
+## Lesson 12:( Nested Semi-Structured Data)
