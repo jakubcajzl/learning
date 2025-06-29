@@ -43,20 +43,50 @@ create or replace table ROOT_DEPTH (
    RANGE_MAX number(2)
    );
 ```
+
 - Renaming a table:
 ``` sql
 alter table garden_plants.veggies.root_size
 rename to garden_plants.veggies.root_depth;
 ```
+
 - Moving a table:
 ``` sql
 alter table garden_plants.veggies.root_size
 rename to garden_plants.fruits.root_depth;
 ```
-- Vieving a definition of a table:
-![DWW_052](https://github.com/user-attachments/assets/cc8164c1-e7f1-47db-8076-91edaeb0a021)
 
-- 
+- Vieving a definition of a table:
+![DWW_052](https://github.com/user-attachments/assets/d01a112d-4570-4ccd-b2c4-f08d63382f47)
+
+- Inserting new values into a table - example:
+``` sql
+insert into root_depth values (1, 'S', 'Shallow', 'cm', 30, 45);
+
+insert into root_depth values
+    (1, 'S', 'Shallow', 'cm', 30, 45),
+    (2, 'M', 'Medium', 'cm', 45, 60),
+    (3, 'D', 'Deep', 'cm', 60, 90)
+    ;
+```
+
+- Changing values in a table:
+``` sql
+update root_depth
+    set root_depth_id = 2
+    where root_depth_code = 'M'
+    ;
+```
+
+- Deleting a row of a table:
+``` sql
+delete from root_depth where root_depth_id = 9;
+```
+
+- Deleting all the rows from a table:
+``` sql
+truncate table root_depth;
+``` sql
 
 ## Lesson 4 (Tables, Data Types, and Loading Data)
 
@@ -79,5 +109,8 @@ rename to garden_plants.fruits.root_depth;
 
 ## SQL
 - Naming a column can be done literally using double quotes, e.g.:
-  - select 'hello' as "Greeting";
+``` sql
+select 'hello' as "Greeting";
+```
+
 - Run always executes all the code (from a previous semicolon) up to a (next) semicolon
