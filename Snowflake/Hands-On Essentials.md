@@ -29,6 +29,8 @@
 - Hierarchy: Databases -> Schemas -> Tables
 - To show info about **databases** run: _show databases;_
 - To show info about **schemas** run: _show schemas;_ (current selected database) or _show schemas in account;_ (all schemas for current role)
+
+## Lesson 4 (Tables, Data Types, and Loading Data)
 - When creating a database, two concepts should be used - Data modeling and Normalization - example:
 
 <img width="800" alt="Screenshot (86)" src="https://github.com/user-attachments/assets/ffde8f2f-686b-40d4-9594-8a06bc8557fb" />
@@ -86,11 +88,24 @@ delete from root_depth where root_depth_id = 9;
 - Deleting all the rows from a table:
 ``` sql
 truncate table root_depth;
-``` sql
-
-## Lesson 4 (Tables, Data Types, and Loading Data)
+```
 
 ## Lesson 5 (Worksheets & Warehouses)
+- Data mart = a subset of a data warehouse, focused on a specific business area (e.g. Sales Data Mart, Finance Data Mart, Customer Service Data Mart, etc.)
+- 3NF (Third Normal Form) = a normal form used in relational database design to reduce data redundancy and ensure data integrity. It's part of the normalization process, which organizes data into related tables to avoid anomalies in insert, update, or delete operations.
+  - A table is in 3NF if:
+    1. It is in 2NF (i.e., no partial dependency on a composite key)
+    2. No transitive dependencies — i.e., non-key columns depend only on the primary key, not on other non-key columns
+  - Example:
+    - **Not in 3NF:** ``` Employee (EmployeeID, Name, DepartmentID, DepartmentName) ```
+      - Here, DepartmentName depends on DepartmentID, which is not a primary key — this is a transitive dependency
+    - **In 3NF:** ``` Employee (EmployeeID, Name, DepartmentID) ```, ``` Department (DepartmentID, DepartmentName) ```
+      - Now, everything depends only on its own table's primary key — no transitive dependencies.
+- Dimensional Modelling and Star Schemas:
+
+<img width="800" alt="Screenshot (86)" src="https://res.cloudinary.com/endjin/image/upload/f_auto/q_80/assets/images/blog/2023/11/schema-spectrum-de-noralised-star-schema-normalised.png" />
+
+
 
 ## Lesson 6 (Meet DORA!)
 
