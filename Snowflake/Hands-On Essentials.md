@@ -105,6 +105,13 @@ truncate table root_depth;
 
 <img width="800" alt="Screenshot (86)" src="https://res.cloudinary.com/endjin/image/upload/f_auto/q_80/assets/images/blog/2023/11/schema-spectrum-de-noralised-star-schema-normalised.png" />
 
+- **Scaling In** and **Scaling Out** means _automatically_ adding and reducing number of computing clusters = Multi-Cluster **Elastic** Data Warehousing
+- **Scaling Up** and **Scaling Down** means _manually_ changing the size of the cluster (e.g. from XS to M)
+- A cluster just means a "group" of servers
+- In Snowflake all computing **warehouses** (XS, M, L, ...) have **1 cluster**, but a cluster have different number of servers for each warehouse type
+- How to control costs? Set up a **Resource Monitor**:
+![DWW_059](https://github.com/user-attachments/assets/16c07e6f-2d4b-41fc-8d57-8d930cef8194)
+
 
 
 ## Lesson 6 (Meet DORA!)
