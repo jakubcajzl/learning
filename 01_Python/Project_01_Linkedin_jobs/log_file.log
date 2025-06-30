@@ -1,0 +1,829 @@
+============= New run of the program =============
+
+2024-05-17 10:19:30,122 | INFO | line: 160 | csv_load: File dataset/job_postings.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,025 | INFO | line: 160 | csv_load: File dataset/company_details/companies.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,297 | INFO | line: 160 | csv_load: File dataset/company_details/company_industries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,334 | INFO | line: 160 | csv_load: File dataset/job_details/salaries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,367 | INFO | line: 160 | csv_load: File dataset/company_details/employee_counts.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,407 | INFO | line: 160 | csv_load: File dataset/job_details/job_skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,435 | INFO | line: 160 | csv_load: File dataset/maps/skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:19:33,439 | INFO | line: 188 | basic_info: 
+	==jobs== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 33246
+	Number of columns: 					| 28
+	Columns names: | Index(['job_id', 'company_id', 'title', 'description', 'max_salary',
+       'med_salary', 'min_salary', 'pay_period', 'formatted_work_type',
+       'location', 'applies', 'original_listed_time', 'remote_allowed',
+       'views', 'job_posting_url', 'application_url', 'application_type',
+       'expiry', 'closed_time', 'formatted_experience_level', 'skills_desc',
+       'listed_time', 'posting_domain', 'sponsored', 'work_type', 'currency',
+       'compensation_type', 'scraped'],
+      dtype='object')
+
+2024-05-17 10:19:33,441 | INFO | line: 188 | basic_info: 
+	==companies== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 11361
+	Number of columns: 					| 10
+	Columns names: | Index(['company_id', 'name', 'description', 'company_size', 'state', 'country',
+       'city', 'zip_code', 'address', 'url'],
+      dtype='object')
+
+2024-05-17 10:19:33,443 | INFO | line: 188 | basic_info: 
+	==industries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 12601
+	Number of columns: 					| 2
+	Columns names: | Index(['company_id', 'industry'], dtype='object')
+
+2024-05-17 10:19:33,445 | INFO | line: 188 | basic_info: 
+	==salaries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 13352
+	Number of columns: 					| 8
+	Columns names: | Index(['salary_id', 'job_id', 'max_salary', 'med_salary', 'min_salary',
+       'pay_period', 'currency', 'compensation_type'],
+      dtype='object')
+
+2024-05-17 10:19:33,447 | INFO | line: 188 | basic_info: 
+	==employee_counts== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 14275
+	Number of columns: 					| 4
+	Columns names: | Index(['company_id', 'employee_count', 'follower_count', 'time_recorded'], dtype='object')
+
+2024-05-17 10:19:33,455 | INFO | line: 188 | basic_info: 
+	==job_skills== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 56591
+	Number of columns: 					| 2
+	Columns names: | Index(['job_id', 'skill_abr'], dtype='object')
+
+2024-05-17 10:19:33,458 | INFO | line: 188 | basic_info: 
+	==skills_map== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 35
+	Number of columns: 					| 2
+	Columns names: | Index(['skill_abr', 'skill_name'], dtype='object')
+
+2024-05-17 10:19:33,459 | INFO | line: 339 | columns_drop: Deleting columns in dataframe ==jobs==
+2024-05-17 10:19:33,459 | INFO | line: 343 | columns_drop: Deleted column: work_type
+2024-05-17 10:19:33,474 | INFO | line: 348 | columns_drop: Deleting of columns finished succesfully!
+2024-05-17 10:19:33,475 | INFO | line: 285 | columns_rename: Renaming columns in dataframe ==jobs==
+2024-05-17 10:19:33,476 | INFO | line: 291 | columns_rename: Renamed columns are ('old_name', 'new_name'): 
+	dict_items([('formatted_work_type', 'work_type'), ('formatted_experience_level', 'experience_level'), ('expiry', 'expiry_time')])
+2024-05-17 10:19:33,477 | INFO | line: 311 | columns_rename_prefix: Renaming columns in dataframe ==companies== by adding a prefix "company_"
+2024-05-17 10:19:33,481 | INFO | line: 320 | columns_rename_prefix: Renamed columns are: 
+	Index(['company_id', 'company_name', 'company_description', 'company_size',
+       'company_state', 'company_country', 'company_city', 'company_zip_code',
+       'company_address', 'company_url'],
+      dtype='object')
+2024-05-17 10:19:33,481 | INFO | line: 395 | main: Merging skills tables
+2024-05-17 10:19:33,485 | INFO | line: 406 | main: Merging of skills tables finished succesfully!
+2024-05-17 10:19:33,496 | INFO | line: 431 | main: Column job_id from ==jobs== table has 0 duplicates.
+2024-05-17 10:19:33,497 | INFO | line: 431 | main: Column company_id from ==companies== table has 0 duplicates.
+2024-05-17 10:19:33,499 | INFO | line: 431 | main: Column job_id from ==salaries== table has 0 duplicates.
+2024-05-17 10:19:33,510 | INFO | line: 438 | main: Column company_id from ==industries== table has 1328 duplicates:
+Duplicates (top 5 rows):
+       company_id                           industry
+6010         1009      IT Services and IT Consulting
+3674         1009  Information Technology & Services
+3869         1016             Hospital & Health Care
+10154        1016          Hospitals and Health Care
+5677         1021           Renewables & Environment
+2024-05-17 10:19:33,511 | INFO | line: 445 | main: Removing the duplicates in ==industries== by grouping the records:
+2024-05-17 10:19:33,718 | INFO | line: 459 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 10:19:33,737 | INFO | line: 438 | main: Column company_id from ==employee_counts== table has 2952 duplicates:
+Duplicates (top 5 rows):
+       company_id  employee_count  follower_count  time_recorded
+6221         1009          308001        15467710   1.698964e+09
+3711         1009          316130        16114398   1.692851e+09
+10809        1016           54640         2065359   1.699063e+09
+3908         1016           53495         2060378   1.692853e+09
+10890        1016           54639         2065363   1.699063e+09
+2024-05-17 10:19:33,738 | INFO | line: 445 | main: Removing the duplicates in ==employee_counts== by grouping the records:
+2024-05-17 10:19:34,392 | INFO | line: 459 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 10:19:34,423 | INFO | line: 438 | main: Column job_id from ==skills== table has 24169 duplicates:
+Duplicates (top 5 rows):
+         job_id skills_abbr                  skills
+38946   3958427          IT  Information Technology
+38945   3958427         ART            Art/Creative
+38944   3958427        DSGN                  Design
+741    85008768        SALE                   Sales
+742    85008768          BD    Business Development
+2024-05-17 10:19:34,423 | INFO | line: 445 | main: Removing the duplicates in ==skills== by grouping the records:
+2024-05-17 10:19:35,662 | INFO | line: 459 | main: Final result: column job_id has 0 duplicates.
+2024-05-17 10:19:35,662 | INFO | line: 465 | main: Starting merge of all tables.
+2024-05-17 10:19:35,865 | INFO | line: 475 | main: Merging of all tables completed succesfully!
+2024-05-17 10:19:35,865 | INFO | line: 480 | main: Creating a description dataframe...
+2024-05-17 10:19:51,684 | INFO | line: 497 | main: Discription table:
+                              Rows Values Unique values  NULLs  Zeros  \
+skills_desc                  33246    337           305  32909      0   
+closed_time                  33246   1172             3  32074      0   
+med_salary_#salaries         33246   2241           594  31005      2   
+med_salary_#jobs             33246   2241           594  31005      2   
+remote_allowed               33246   4802             2  28444      0   
+max_salary_#salaries         33246  11111          2363  22135      0   
+min_salary_#salaries         33246  11111          2153  22135      0   
+min_salary_#jobs             33246  11111          2153  22135      0   
+max_salary_#jobs             33246  11111          2360  22135      0   
+pay_period_#jobs             33246  13352             6  19894      0   
+currency_#salaries           33246  13352             2  19894      0   
+pay_period_#salaries         33246  13352             6  19894      0   
+compensation_type_#salaries  33246  13352             2  19894      0   
+salary_id                    33246  13352         13353  19894      0   
+compensation_type_#jobs      33246  13352             2  19894      0   
+currency_#jobs               33246  13352             2  19894      0   
+applies                      33246  16238           329  17008      0   
+posting_domain               33246  19688          2577  13558      0   
+application_url              33246  20996         19932  12250      0   
+experience_level             33246  24065             7   9181      0   
+views                        33246  25886           789   7360      0   
+skills_abbr                  33246  32034          1875   1212      0   
+skills                       33246  32034          1875   1212      0   
+industry                     33246  32534           319    712      0   
+company_name                 33246  32541         11271    705      0   
+company_url                  33246  32545         11279    701      0   
+follower_count               33246  32590          9325    656      0   
+employee_count               33246  32590          4831    656      0   
+company_id                   33246  32592         11326    654      0   
+description                  33246  33245         30153      1      0   
+sponsored                    33246  33246             2      0  25129   
+location                     33246  33246          4621      0      0   
+title                        33246  33246         22404      0      0   
+work_type                    33246  33246             7      0      0   
+job_posting_url              33246  33246         33246      0      0   
+original_listed_time         33246  33246           296      0      0   
+listed_time                  33246  33246            68      0      0   
+application_type             33246  33246             3      0      0   
+expiry_time                  33246  33246           151      0      0   
+scraped                      33246  33246           707      0      0   
+job_id                       33246  33246         33246      0      0   
+
+                            Duplicates  
+skills_desc                      32941  
+closed_time                      33243  
+med_salary_#salaries             32652  
+med_salary_#jobs                 32652  
+remote_allowed                   33244  
+max_salary_#salaries             30883  
+min_salary_#salaries             31093  
+min_salary_#jobs                 31093  
+max_salary_#jobs                 30886  
+pay_period_#jobs                 33240  
+currency_#salaries               33244  
+pay_period_#salaries             33240  
+compensation_type_#salaries      33244  
+salary_id                        19893  
+compensation_type_#jobs          33244  
+currency_#jobs                   33244  
+applies                          32917  
+posting_domain                   30669  
+application_url                  13314  
+experience_level                 33239  
+views                            32457  
+skills_abbr                      31371  
+skills                           31371  
+industry                         32927  
+company_name                     21975  
+company_url                      21967  
+follower_count                   23921  
+employee_count                   28415  
+company_id                       21920  
+description                       3093  
+sponsored                        33244  
+location                         28625  
+title                            10842  
+work_type                        33239  
+job_posting_url                      0  
+original_listed_time             32950  
+listed_time                      33178  
+application_type                 33243  
+expiry_time                      33095  
+scraped                          32539  
+job_id                               0  
+2024-05-17 10:19:51,684 | INFO | line: 506 | main: Altering columns of the data...
+2024-05-17 10:19:58,381 | INFO | line: 604 | main: Altering of the columns of data finished succesfully!
+2024-05-17 10:19:58,381 | INFO | line: 610 | main: Exporting data to CSV!
+2024-05-17 10:20:04,487 | INFO | line: 615 | main: Exporting data to CSV completed succesfully!
+2024-05-17 10:54:40,680 | INFO | line: 110 | <module>: 
+
+============= New run of the program =============
+
+2024-05-17 10:54:43,572 | INFO | line: 159 | csv_load: File dataset/job_postings.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,504 | INFO | line: 159 | csv_load: File dataset/company_details/companies.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,774 | INFO | line: 159 | csv_load: File dataset/company_details/company_industries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,805 | INFO | line: 159 | csv_load: File dataset/job_details/salaries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,844 | INFO | line: 159 | csv_load: File dataset/company_details/employee_counts.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,888 | INFO | line: 159 | csv_load: File dataset/job_details/job_skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,917 | INFO | line: 159 | csv_load: File dataset/maps/skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 10:54:46,923 | INFO | line: 186 | basic_info: 
+	==jobs== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 33246
+	Number of columns: 					| 28
+	Columns names: | Index(['job_id', 'company_id', 'title', 'description', 'max_salary',
+       'med_salary', 'min_salary', 'pay_period', 'formatted_work_type',
+       'location', 'applies', 'original_listed_time', 'remote_allowed',
+       'views', 'job_posting_url', 'application_url', 'application_type',
+       'expiry', 'closed_time', 'formatted_experience_level', 'skills_desc',
+       'listed_time', 'posting_domain', 'sponsored', 'work_type', 'currency',
+       'compensation_type', 'scraped'],
+      dtype='object')
+
+2024-05-17 10:54:46,926 | INFO | line: 186 | basic_info: 
+	==companies== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 11361
+	Number of columns: 					| 10
+	Columns names: | Index(['company_id', 'name', 'description', 'company_size', 'state', 'country',
+       'city', 'zip_code', 'address', 'url'],
+      dtype='object')
+
+2024-05-17 10:54:46,929 | INFO | line: 186 | basic_info: 
+	==industries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 12601
+	Number of columns: 					| 2
+	Columns names: | Index(['company_id', 'industry'], dtype='object')
+
+2024-05-17 10:54:46,931 | INFO | line: 186 | basic_info: 
+	==salaries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 13352
+	Number of columns: 					| 8
+	Columns names: | Index(['salary_id', 'job_id', 'max_salary', 'med_salary', 'min_salary',
+       'pay_period', 'currency', 'compensation_type'],
+      dtype='object')
+
+2024-05-17 10:54:46,934 | INFO | line: 186 | basic_info: 
+	==employee_counts== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 14275
+	Number of columns: 					| 4
+	Columns names: | Index(['company_id', 'employee_count', 'follower_count', 'time_recorded'], dtype='object')
+
+2024-05-17 10:54:46,938 | INFO | line: 186 | basic_info: 
+	==job_skills== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 56591
+	Number of columns: 					| 2
+	Columns names: | Index(['job_id', 'skill_abr'], dtype='object')
+
+2024-05-17 10:54:46,939 | INFO | line: 186 | basic_info: 
+	==skills_map== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 35
+	Number of columns: 					| 2
+	Columns names: | Index(['skill_abr', 'skill_name'], dtype='object')
+
+2024-05-17 10:54:46,940 | INFO | line: 334 | columns_drop: Deleting columns in dataframe ==jobs==
+2024-05-17 10:54:46,940 | INFO | line: 338 | columns_drop: Deleted column: work_type
+2024-05-17 10:54:46,958 | INFO | line: 343 | columns_drop: Deleting of columns finished succesfully!
+2024-05-17 10:54:46,958 | INFO | line: 280 | columns_rename: Renaming columns in dataframe ==jobs==
+2024-05-17 10:54:46,960 | INFO | line: 286 | columns_rename: Renamed columns are ('old_name', 'new_name'): 
+	dict_items([('formatted_work_type', 'work_type'), ('formatted_experience_level', 'experience_level'), ('expiry', 'expiry_time')])
+2024-05-17 10:54:46,960 | INFO | line: 306 | columns_rename_prefix: Renaming columns in dataframe ==companies== by adding a prefix "company_"
+2024-05-17 10:54:46,964 | INFO | line: 315 | columns_rename_prefix: Renamed columns are: 
+	Index(['company_id', 'company_name', 'company_description', 'company_size',
+       'company_state', 'company_country', 'company_city', 'company_zip_code',
+       'company_address', 'company_url'],
+      dtype='object')
+2024-05-17 10:54:46,965 | INFO | line: 395 | main: Merging skills tables
+2024-05-17 10:54:46,978 | INFO | line: 407 | main: Merging of skills tables finished succesfully!
+2024-05-17 10:54:46,980 | INFO | line: 434 | main: Column job_id from ==jobs== table has 0 duplicates.
+2024-05-17 10:54:46,982 | INFO | line: 434 | main: Column company_id from ==companies== table has 0 duplicates.
+2024-05-17 10:54:46,984 | INFO | line: 434 | main: Column job_id from ==salaries== table has 0 duplicates.
+2024-05-17 10:54:46,993 | INFO | line: 441 | main: Column company_id from ==industries== table has 1328 duplicates:
+Duplicates (top 5 rows):
+       company_id                           industry
+6010         1009      IT Services and IT Consulting
+3674         1009  Information Technology & Services
+3869         1016             Hospital & Health Care
+10154        1016          Hospitals and Health Care
+5677         1021           Renewables & Environment
+2024-05-17 10:54:46,995 | INFO | line: 448 | main: Removing the duplicates in ==industries== by grouping the records:
+2024-05-17 10:54:47,187 | INFO | line: 462 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 10:54:47,211 | INFO | line: 441 | main: Column company_id from ==employee_counts== table has 2952 duplicates:
+Duplicates (top 5 rows):
+       company_id  employee_count  follower_count  time_recorded
+6221         1009          308001        15467710   1.698964e+09
+3711         1009          316130        16114398   1.692851e+09
+10809        1016           54640         2065359   1.699063e+09
+3908         1016           53495         2060378   1.692853e+09
+10890        1016           54639         2065363   1.699063e+09
+2024-05-17 10:54:47,212 | INFO | line: 448 | main: Removing the duplicates in ==employee_counts== by grouping the records:
+2024-05-17 10:54:47,874 | INFO | line: 462 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 10:54:47,900 | INFO | line: 441 | main: Column job_id from ==skills== table has 24169 duplicates:
+Duplicates (top 5 rows):
+         job_id skills_abbr                  skills
+38946   3958427          IT  Information Technology
+38945   3958427         ART            Art/Creative
+38944   3958427        DSGN                  Design
+741    85008768        SALE                   Sales
+742    85008768          BD    Business Development
+2024-05-17 10:54:47,901 | INFO | line: 448 | main: Removing the duplicates in ==skills== by grouping the records:
+2024-05-17 10:54:49,125 | INFO | line: 462 | main: Final result: column job_id has 0 duplicates.
+2024-05-17 10:54:49,125 | INFO | line: 468 | main: Starting merge of all tables.
+2024-05-17 10:54:49,308 | INFO | line: 478 | main: Merging of all tables completed succesfully!
+2024-05-17 10:54:49,308 | INFO | line: 483 | main: Creating a description dataframe...
+2024-05-17 10:55:05,275 | INFO | line: 500 | main: Discription table:
+                              Rows Values Unique values  NULLs  Zeros  \
+skills_desc                  33246    337           305  32909      0   
+closed_time                  33246   1172             3  32074      0   
+med_salary_#salaries         33246   2241           594  31005      2   
+med_salary_#jobs             33246   2241           594  31005      2   
+remote_allowed               33246   4802             2  28444      0   
+max_salary_#salaries         33246  11111          2363  22135      0   
+min_salary_#salaries         33246  11111          2153  22135      0   
+min_salary_#jobs             33246  11111          2153  22135      0   
+max_salary_#jobs             33246  11111          2360  22135      0   
+pay_period_#jobs             33246  13352             6  19894      0   
+currency_#salaries           33246  13352             2  19894      0   
+pay_period_#salaries         33246  13352             6  19894      0   
+compensation_type_#salaries  33246  13352             2  19894      0   
+salary_id                    33246  13352         13353  19894      0   
+compensation_type_#jobs      33246  13352             2  19894      0   
+currency_#jobs               33246  13352             2  19894      0   
+applies                      33246  16238           329  17008      0   
+posting_domain               33246  19688          2577  13558      0   
+application_url              33246  20996         19932  12250      0   
+experience_level             33246  24065             7   9181      0   
+views                        33246  25886           789   7360      0   
+skills_abbr                  33246  32034          1875   1212      0   
+skills                       33246  32034          1875   1212      0   
+industry                     33246  32534           319    712      0   
+company_name                 33246  32541         11271    705      0   
+company_url                  33246  32545         11279    701      0   
+follower_count               33246  32590          9325    656      0   
+employee_count               33246  32590          4831    656      0   
+company_id                   33246  32592         11326    654      0   
+description                  33246  33245         30153      1      0   
+sponsored                    33246  33246             2      0  25129   
+location                     33246  33246          4621      0      0   
+title                        33246  33246         22404      0      0   
+work_type                    33246  33246             7      0      0   
+job_posting_url              33246  33246         33246      0      0   
+original_listed_time         33246  33246           296      0      0   
+listed_time                  33246  33246            68      0      0   
+application_type             33246  33246             3      0      0   
+expiry_time                  33246  33246           151      0      0   
+scraped                      33246  33246           707      0      0   
+job_id                       33246  33246         33246      0      0   
+
+                            Duplicates  
+skills_desc                      32941  
+closed_time                      33243  
+med_salary_#salaries             32652  
+med_salary_#jobs                 32652  
+remote_allowed                   33244  
+max_salary_#salaries             30883  
+min_salary_#salaries             31093  
+min_salary_#jobs                 31093  
+max_salary_#jobs                 30886  
+pay_period_#jobs                 33240  
+currency_#salaries               33244  
+pay_period_#salaries             33240  
+compensation_type_#salaries      33244  
+salary_id                        19893  
+compensation_type_#jobs          33244  
+currency_#jobs                   33244  
+applies                          32917  
+posting_domain                   30669  
+application_url                  13314  
+experience_level                 33239  
+views                            32457  
+skills_abbr                      31371  
+skills                           31371  
+industry                         32927  
+company_name                     21975  
+company_url                      21967  
+follower_count                   23921  
+employee_count                   28415  
+company_id                       21920  
+description                       3093  
+sponsored                        33244  
+location                         28625  
+title                            10842  
+work_type                        33239  
+job_posting_url                      0  
+original_listed_time             32950  
+listed_time                      33178  
+application_type                 33243  
+expiry_time                      33095  
+scraped                          32539  
+job_id                               0  
+2024-05-17 10:55:05,276 | INFO | line: 509 | main: Altering columns of the data...
+2024-05-17 10:55:11,800 | INFO | line: 611 | main: Altering of the columns of data finished succesfully!
+2024-05-17 10:55:11,800 | INFO | line: 618 | main: Exporting data to CSV!
+2024-05-17 10:55:17,982 | INFO | line: 623 | main: Exporting data to CSV completed succesfully!
+2024-05-17 11:01:07,225 | INFO | line: 110 | <module>: 
+
+============= New run of the program =============
+
+2024-05-17 11:01:10,078 | INFO | line: 159 | csv_load: File dataset/job_postings.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,004 | INFO | line: 159 | csv_load: File dataset/company_details/companies.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,265 | INFO | line: 159 | csv_load: File dataset/company_details/company_industries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,302 | INFO | line: 159 | csv_load: File dataset/job_details/salaries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,339 | INFO | line: 159 | csv_load: File dataset/company_details/employee_counts.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,379 | INFO | line: 159 | csv_load: File dataset/job_details/job_skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,404 | INFO | line: 159 | csv_load: File dataset/maps/skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-05-17 11:01:13,413 | INFO | line: 186 | basic_info: 
+	==jobs== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 33246
+	Number of columns: 					| 28
+	Columns names: | Index(['job_id', 'company_id', 'title', 'description', 'max_salary',
+       'med_salary', 'min_salary', 'pay_period', 'formatted_work_type',
+       'location', 'applies', 'original_listed_time', 'remote_allowed',
+       'views', 'job_posting_url', 'application_url', 'application_type',
+       'expiry', 'closed_time', 'formatted_experience_level', 'skills_desc',
+       'listed_time', 'posting_domain', 'sponsored', 'work_type', 'currency',
+       'compensation_type', 'scraped'],
+      dtype='object')
+
+2024-05-17 11:01:13,415 | INFO | line: 186 | basic_info: 
+	==companies== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 11361
+	Number of columns: 					| 10
+	Columns names: | Index(['company_id', 'name', 'description', 'company_size', 'state', 'country',
+       'city', 'zip_code', 'address', 'url'],
+      dtype='object')
+
+2024-05-17 11:01:13,415 | INFO | line: 186 | basic_info: 
+	==industries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 12601
+	Number of columns: 					| 2
+	Columns names: | Index(['company_id', 'industry'], dtype='object')
+
+2024-05-17 11:01:13,415 | INFO | line: 186 | basic_info: 
+	==salaries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 13352
+	Number of columns: 					| 8
+	Columns names: | Index(['salary_id', 'job_id', 'max_salary', 'med_salary', 'min_salary',
+       'pay_period', 'currency', 'compensation_type'],
+      dtype='object')
+
+2024-05-17 11:01:13,415 | INFO | line: 186 | basic_info: 
+	==employee_counts== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 14275
+	Number of columns: 					| 4
+	Columns names: | Index(['company_id', 'employee_count', 'follower_count', 'time_recorded'], dtype='object')
+
+2024-05-17 11:01:13,431 | INFO | line: 186 | basic_info: 
+	==job_skills== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 56591
+	Number of columns: 					| 2
+	Columns names: | Index(['job_id', 'skill_abr'], dtype='object')
+
+2024-05-17 11:01:13,434 | INFO | line: 186 | basic_info: 
+	==skills_map== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 35
+	Number of columns: 					| 2
+	Columns names: | Index(['skill_abr', 'skill_name'], dtype='object')
+
+2024-05-17 11:01:13,434 | INFO | line: 334 | columns_drop: Deleting columns in dataframe ==jobs==
+2024-05-17 11:01:13,435 | INFO | line: 338 | columns_drop: Deleted column: work_type
+2024-05-17 11:01:13,450 | INFO | line: 343 | columns_drop: Deleting of columns finished succesfully!
+2024-05-17 11:01:13,451 | INFO | line: 280 | columns_rename: Renaming columns in dataframe ==jobs==
+2024-05-17 11:01:13,453 | INFO | line: 286 | columns_rename: Renamed columns are ('old_name', 'new_name'): 
+	dict_items([('formatted_work_type', 'work_type'), ('formatted_experience_level', 'experience_level'), ('expiry', 'expiry_time')])
+2024-05-17 11:01:13,454 | INFO | line: 306 | columns_rename_prefix: Renaming columns in dataframe ==companies== by adding a prefix "company_"
+2024-05-17 11:01:13,457 | INFO | line: 315 | columns_rename_prefix: Renamed columns are: 
+	Index(['company_id', 'company_name', 'company_description', 'company_size',
+       'company_state', 'company_country', 'company_city', 'company_zip_code',
+       'company_address', 'company_url'],
+      dtype='object')
+2024-05-17 11:01:13,457 | INFO | line: 395 | main: Merging skills tables
+2024-05-17 11:01:13,466 | INFO | line: 407 | main: Merging of skills tables finished succesfully!
+2024-05-17 11:01:13,475 | INFO | line: 434 | main: Column job_id from ==jobs== table has 0 duplicates.
+2024-05-17 11:01:13,476 | INFO | line: 434 | main: Column company_id from ==companies== table has 0 duplicates.
+2024-05-17 11:01:13,478 | INFO | line: 434 | main: Column job_id from ==salaries== table has 0 duplicates.
+2024-05-17 11:01:13,490 | INFO | line: 441 | main: Column company_id from ==industries== table has 1328 duplicates:
+Duplicates (top 5 rows):
+       company_id                           industry
+6010         1009      IT Services and IT Consulting
+3674         1009  Information Technology & Services
+3869         1016             Hospital & Health Care
+10154        1016          Hospitals and Health Care
+5677         1021           Renewables & Environment
+2024-05-17 11:01:13,490 | INFO | line: 447 | main: Removing the duplicates in ==industries== by grouping the records...
+2024-05-17 11:01:13,696 | INFO | line: 461 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 11:01:13,708 | INFO | line: 441 | main: Column company_id from ==employee_counts== table has 2952 duplicates:
+Duplicates (top 5 rows):
+       company_id  employee_count  follower_count  time_recorded
+6221         1009          308001        15467710   1.698964e+09
+3711         1009          316130        16114398   1.692851e+09
+10809        1016           54640         2065359   1.699063e+09
+3908         1016           53495         2060378   1.692853e+09
+10890        1016           54639         2065363   1.699063e+09
+2024-05-17 11:01:13,709 | INFO | line: 447 | main: Removing the duplicates in ==employee_counts== by grouping the records...
+2024-05-17 11:01:14,372 | INFO | line: 461 | main: Final result: column company_id has 0 duplicates.
+2024-05-17 11:01:14,397 | INFO | line: 441 | main: Column job_id from ==skills== table has 24169 duplicates:
+Duplicates (top 5 rows):
+         job_id skills_abbr                  skills
+38946   3958427          IT  Information Technology
+38945   3958427         ART            Art/Creative
+38944   3958427        DSGN                  Design
+741    85008768        SALE                   Sales
+742    85008768          BD    Business Development
+2024-05-17 11:01:14,399 | INFO | line: 447 | main: Removing the duplicates in ==skills== by grouping the records...
+2024-05-17 11:01:15,625 | INFO | line: 461 | main: Final result: column job_id has 0 duplicates.
+2024-05-17 11:01:15,625 | INFO | line: 467 | main: Starting merge of all tables.
+2024-05-17 11:01:15,806 | INFO | line: 477 | main: Merging of all tables completed succesfully!
+2024-05-17 11:01:15,806 | INFO | line: 482 | main: Creating a description dataframe...
+2024-05-17 11:01:31,466 | INFO | line: 499 | main: Discription table:
+                              Rows Values Unique values  NULLs  Zeros  \
+skills_desc                  33246    337           305  32909      0   
+closed_time                  33246   1172             3  32074      0   
+med_salary_#salaries         33246   2241           594  31005      2   
+med_salary_#jobs             33246   2241           594  31005      2   
+remote_allowed               33246   4802             2  28444      0   
+max_salary_#salaries         33246  11111          2363  22135      0   
+min_salary_#salaries         33246  11111          2153  22135      0   
+min_salary_#jobs             33246  11111          2153  22135      0   
+max_salary_#jobs             33246  11111          2360  22135      0   
+pay_period_#jobs             33246  13352             6  19894      0   
+currency_#salaries           33246  13352             2  19894      0   
+pay_period_#salaries         33246  13352             6  19894      0   
+compensation_type_#salaries  33246  13352             2  19894      0   
+salary_id                    33246  13352         13353  19894      0   
+compensation_type_#jobs      33246  13352             2  19894      0   
+currency_#jobs               33246  13352             2  19894      0   
+applies                      33246  16238           329  17008      0   
+posting_domain               33246  19688          2577  13558      0   
+application_url              33246  20996         19932  12250      0   
+experience_level             33246  24065             7   9181      0   
+views                        33246  25886           789   7360      0   
+skills_abbr                  33246  32034          1875   1212      0   
+skills                       33246  32034          1875   1212      0   
+industry                     33246  32534           319    712      0   
+company_name                 33246  32541         11271    705      0   
+company_url                  33246  32545         11279    701      0   
+follower_count               33246  32590          9325    656      0   
+employee_count               33246  32590          4831    656      0   
+company_id                   33246  32592         11326    654      0   
+description                  33246  33245         30153      1      0   
+sponsored                    33246  33246             2      0  25129   
+location                     33246  33246          4621      0      0   
+title                        33246  33246         22404      0      0   
+work_type                    33246  33246             7      0      0   
+job_posting_url              33246  33246         33246      0      0   
+original_listed_time         33246  33246           296      0      0   
+listed_time                  33246  33246            68      0      0   
+application_type             33246  33246             3      0      0   
+expiry_time                  33246  33246           151      0      0   
+scraped                      33246  33246           707      0      0   
+job_id                       33246  33246         33246      0      0   
+
+                            Duplicates  
+skills_desc                      32941  
+closed_time                      33243  
+med_salary_#salaries             32652  
+med_salary_#jobs                 32652  
+remote_allowed                   33244  
+max_salary_#salaries             30883  
+min_salary_#salaries             31093  
+min_salary_#jobs                 31093  
+max_salary_#jobs                 30886  
+pay_period_#jobs                 33240  
+currency_#salaries               33244  
+pay_period_#salaries             33240  
+compensation_type_#salaries      33244  
+salary_id                        19893  
+compensation_type_#jobs          33244  
+currency_#jobs                   33244  
+applies                          32917  
+posting_domain                   30669  
+application_url                  13314  
+experience_level                 33239  
+views                            32457  
+skills_abbr                      31371  
+skills                           31371  
+industry                         32927  
+company_name                     21975  
+company_url                      21967  
+follower_count                   23921  
+employee_count                   28415  
+company_id                       21920  
+description                       3093  
+sponsored                        33244  
+location                         28625  
+title                            10842  
+work_type                        33239  
+job_posting_url                      0  
+original_listed_time             32950  
+listed_time                      33178  
+application_type                 33243  
+expiry_time                      33095  
+scraped                          32539  
+job_id                               0  
+2024-05-17 11:01:31,466 | INFO | line: 508 | main: Altering columns of the data...
+2024-05-17 11:01:37,909 | INFO | line: 610 | main: Altering of the columns of data finished succesfully!
+2024-05-17 11:01:37,909 | INFO | line: 617 | main: Exporting data to CSV!
+2024-05-17 11:01:43,976 | INFO | line: 622 | main: Exporting data to CSV completed succesfully!
+2024-06-11 16:39:26,364 | INFO | line: 110 | <module>: 
+
+============= New run of the program =============
+
+2024-06-11 16:39:26,390 | ERROR | line: 163 | csv_load: Error: Error tokenizing data. C error: Expected 1 fields in line 4303, saw 2
+
+2024-06-11 16:39:26,390 | WARNING | line: 164 | csv_load: File dataset/job_postings.csv was not loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,403 | ERROR | line: 163 | csv_load: Error: Error tokenizing data. C error: Expected 1 fields in line 805, saw 2
+
+2024-06-11 16:39:26,403 | WARNING | line: 164 | csv_load: File dataset/company_details/companies.csv was not loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,436 | INFO | line: 159 | csv_load: File dataset/company_details/company_industries.csv succesfully loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,482 | INFO | line: 159 | csv_load: File dataset/job_details/salaries.csv succesfully loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,526 | INFO | line: 159 | csv_load: File dataset/company_details/employee_counts.csv succesfully loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,594 | INFO | line: 159 | csv_load: File dataset/job_details/job_skills.csv succesfully loaded into the dataframe using a delimiter: `
+2024-06-11 16:39:26,645 | INFO | line: 159 | csv_load: File dataset/maps/skills.csv succesfully loaded into the dataframe using a delimiter: `
+2024-06-11 16:54:45,607 | INFO | line: 110 | <module>: 
+
+============= New run of the program =============
+
+2024-06-11 16:54:48,471 | INFO | line: 159 | csv_load: File dataset/job_postings.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,390 | INFO | line: 159 | csv_load: File dataset/company_details/companies.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,650 | INFO | line: 159 | csv_load: File dataset/company_details/company_industries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,684 | INFO | line: 159 | csv_load: File dataset/job_details/salaries.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,714 | INFO | line: 159 | csv_load: File dataset/company_details/employee_counts.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,757 | INFO | line: 159 | csv_load: File dataset/job_details/job_skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,782 | INFO | line: 159 | csv_load: File dataset/maps/skills.csv succesfully loaded into the dataframe using a delimiter: ,
+2024-06-11 16:54:51,814 | INFO | line: 186 | basic_info: 
+	==jobs== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 33246
+	Number of columns: 					| 28
+	Columns names: | Index(['job_id', 'company_id', 'title', 'description', 'max_salary',
+       'med_salary', 'min_salary', 'pay_period', 'formatted_work_type',
+       'location', 'applies', 'original_listed_time', 'remote_allowed',
+       'views', 'job_posting_url', 'application_url', 'application_type',
+       'expiry', 'closed_time', 'formatted_experience_level', 'skills_desc',
+       'listed_time', 'posting_domain', 'sponsored', 'work_type', 'currency',
+       'compensation_type', 'scraped'],
+      dtype='object')
+
+2024-06-11 16:54:51,816 | INFO | line: 186 | basic_info: 
+	==companies== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 11361
+	Number of columns: 					| 10
+	Columns names: | Index(['company_id', 'name', 'description', 'company_size', 'state', 'country',
+       'city', 'zip_code', 'address', 'url'],
+      dtype='object')
+
+2024-06-11 16:54:51,822 | INFO | line: 186 | basic_info: 
+	==industries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 12601
+	Number of columns: 					| 2
+	Columns names: | Index(['company_id', 'industry'], dtype='object')
+
+2024-06-11 16:54:51,824 | INFO | line: 186 | basic_info: 
+	==salaries== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 13352
+	Number of columns: 					| 8
+	Columns names: | Index(['salary_id', 'job_id', 'max_salary', 'med_salary', 'min_salary',
+       'pay_period', 'currency', 'compensation_type'],
+      dtype='object')
+
+2024-06-11 16:54:51,827 | INFO | line: 186 | basic_info: 
+	==employee_counts== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 14275
+	Number of columns: 					| 4
+	Columns names: | Index(['company_id', 'employee_count', 'follower_count', 'time_recorded'], dtype='object')
+
+2024-06-11 16:54:51,833 | INFO | line: 186 | basic_info: 
+	==job_skills== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 56591
+	Number of columns: 					| 2
+	Columns names: | Index(['job_id', 'skill_abr'], dtype='object')
+
+2024-06-11 16:54:51,833 | INFO | line: 186 | basic_info: 
+	==skills_map== is object of type: 	| <class 'pandas.core.frame.DataFrame'>
+	Number of rows: 					| 35
+	Number of columns: 					| 2
+	Columns names: | Index(['skill_abr', 'skill_name'], dtype='object')
+
+2024-06-11 16:54:51,833 | INFO | line: 334 | columns_drop: Deleting columns in dataframe ==jobs==
+2024-06-11 16:54:51,833 | INFO | line: 338 | columns_drop: Deleted column: work_type
+2024-06-11 16:54:51,859 | INFO | line: 343 | columns_drop: Deleting of columns finished succesfully!
+2024-06-11 16:54:51,860 | INFO | line: 280 | columns_rename: Renaming columns in dataframe ==jobs==
+2024-06-11 16:54:51,863 | INFO | line: 286 | columns_rename: Renamed columns are ('old_name', 'new_name'): 
+	dict_items([('formatted_work_type', 'work_type'), ('formatted_experience_level', 'experience_level'), ('expiry', 'expiry_time')])
+2024-06-11 16:54:51,864 | INFO | line: 306 | columns_rename_prefix: Renaming columns in dataframe ==companies== by adding a prefix "company_"
+2024-06-11 16:54:51,866 | INFO | line: 315 | columns_rename_prefix: Renamed columns are: 
+	Index(['company_id', 'company_name', 'company_description', 'company_size',
+       'company_state', 'company_country', 'company_city', 'company_zip_code',
+       'company_address', 'company_url'],
+      dtype='object')
+2024-06-11 16:54:51,867 | INFO | line: 395 | main: Merging skills tables
+2024-06-11 16:54:51,885 | INFO | line: 407 | main: Merging of skills tables finished succesfully!
+2024-06-11 16:54:51,890 | INFO | line: 436 | main: Column job_id from ==jobs== table has 0 duplicates.
+2024-06-11 16:54:51,892 | INFO | line: 436 | main: Column company_id from ==companies== table has 0 duplicates.
+2024-06-11 16:54:51,893 | INFO | line: 436 | main: Column job_id from ==salaries== table has 0 duplicates.
+2024-06-11 16:54:51,904 | INFO | line: 443 | main: Column company_id from ==industries== table has 1328 duplicates:
+Duplicates (top 5 rows):
+       company_id                           industry
+6010         1009      IT Services and IT Consulting
+3674         1009  Information Technology & Services
+3869         1016             Hospital & Health Care
+10154        1016          Hospitals and Health Care
+5677         1021           Renewables & Environment
+2024-06-11 16:54:51,904 | INFO | line: 449 | main: Removing the duplicates in ==industries== by grouping the records...
+2024-06-11 16:54:52,107 | INFO | line: 463 | main: Final result: column company_id has 0 duplicates.
+2024-06-11 16:54:52,133 | INFO | line: 443 | main: Column company_id from ==employee_counts== table has 2952 duplicates:
+Duplicates (top 5 rows):
+       company_id  employee_count  follower_count  time_recorded
+6221         1009          308001        15467710   1.698964e+09
+3711         1009          316130        16114398   1.692851e+09
+10809        1016           54640         2065359   1.699063e+09
+3908         1016           53495         2060378   1.692853e+09
+10890        1016           54639         2065363   1.699063e+09
+2024-06-11 16:54:52,134 | INFO | line: 449 | main: Removing the duplicates in ==employee_counts== by grouping the records...
+2024-06-11 16:54:52,808 | INFO | line: 463 | main: Final result: column company_id has 0 duplicates.
+2024-06-11 16:54:52,833 | INFO | line: 443 | main: Column job_id from ==skills== table has 24169 duplicates:
+Duplicates (top 5 rows):
+         job_id skills_abbr                  skills
+38946   3958427          IT  Information Technology
+38945   3958427         ART            Art/Creative
+38944   3958427        DSGN                  Design
+741    85008768        SALE                   Sales
+742    85008768          BD    Business Development
+2024-06-11 16:54:52,834 | INFO | line: 449 | main: Removing the duplicates in ==skills== by grouping the records...
+2024-06-11 16:54:54,057 | INFO | line: 463 | main: Final result: column job_id has 0 duplicates.
+2024-06-11 16:54:54,057 | INFO | line: 469 | main: Starting merge of all tables.
+2024-06-11 16:54:54,243 | INFO | line: 479 | main: Merging of all tables completed succesfully!
+2024-06-11 16:54:54,243 | INFO | line: 484 | main: Creating a description dataframe...
+2024-06-11 16:55:10,132 | INFO | line: 501 | main: Discription table:
+                              Rows Values Unique values  NULLs  Zeros  \
+skills_desc                  33246    337           305  32909      0   
+closed_time                  33246   1172             3  32074      0   
+med_salary_#salaries         33246   2241           594  31005      2   
+med_salary_#jobs             33246   2241           594  31005      2   
+remote_allowed               33246   4802             2  28444      0   
+max_salary_#salaries         33246  11111          2363  22135      0   
+min_salary_#salaries         33246  11111          2153  22135      0   
+min_salary_#jobs             33246  11111          2153  22135      0   
+max_salary_#jobs             33246  11111          2360  22135      0   
+pay_period_#jobs             33246  13352             6  19894      0   
+currency_#salaries           33246  13352             2  19894      0   
+pay_period_#salaries         33246  13352             6  19894      0   
+compensation_type_#salaries  33246  13352             2  19894      0   
+salary_id                    33246  13352         13353  19894      0   
+compensation_type_#jobs      33246  13352             2  19894      0   
+currency_#jobs               33246  13352             2  19894      0   
+applies                      33246  16238           329  17008      0   
+posting_domain               33246  19688          2577  13558      0   
+application_url              33246  20996         19932  12250      0   
+experience_level             33246  24065             7   9181      0   
+views                        33246  25886           789   7360      0   
+skills_abbr                  33246  32034          1875   1212      0   
+skills                       33246  32034          1875   1212      0   
+industry                     33246  32534           319    712      0   
+company_name                 33246  32541         11271    705      0   
+company_url                  33246  32545         11279    701      0   
+follower_count               33246  32590          9325    656      0   
+employee_count               33246  32590          4831    656      0   
+company_id                   33246  32592         11326    654      0   
+description                  33246  33245         30153      1      0   
+sponsored                    33246  33246             2      0  25129   
+location                     33246  33246          4621      0      0   
+title                        33246  33246         22404      0      0   
+work_type                    33246  33246             7      0      0   
+job_posting_url              33246  33246         33246      0      0   
+original_listed_time         33246  33246           296      0      0   
+listed_time                  33246  33246            68      0      0   
+application_type             33246  33246             3      0      0   
+expiry_time                  33246  33246           151      0      0   
+scraped                      33246  33246           707      0      0   
+job_id                       33246  33246         33246      0      0   
+
+                            Duplicates  
+skills_desc                      32941  
+closed_time                      33243  
+med_salary_#salaries             32652  
+med_salary_#jobs                 32652  
+remote_allowed                   33244  
+max_salary_#salaries             30883  
+min_salary_#salaries             31093  
+min_salary_#jobs                 31093  
+max_salary_#jobs                 30886  
+pay_period_#jobs                 33240  
+currency_#salaries               33244  
+pay_period_#salaries             33240  
+compensation_type_#salaries      33244  
+salary_id                        19893  
+compensation_type_#jobs          33244  
+currency_#jobs                   33244  
+applies                          32917  
+posting_domain                   30669  
+application_url                  13314  
+experience_level                 33239  
+views                            32457  
+skills_abbr                      31371  
+skills                           31371  
+industry                         32927  
+company_name                     21975  
+company_url                      21967  
+follower_count                   23921  
+employee_count                   28415  
+company_id                       21920  
+description                       3093  
+sponsored                        33244  
+location                         28625  
+title                            10842  
+work_type                        33239  
+job_posting_url                      0  
+original_listed_time             32950  
+listed_time                      33178  
+application_type                 33243  
+expiry_time                      33095  
+scraped                          32539  
+job_id                               0  
+2024-06-11 16:55:10,133 | INFO | line: 510 | main: Altering columns of the data...
+2024-06-11 16:55:16,596 | INFO | line: 612 | main: Altering of the columns of data finished succesfully!
+2024-06-11 16:55:16,596 | INFO | line: 619 | main: Exporting data to CSV!
+2024-06-11 16:55:22,999 | INFO | line: 624 | main: Exporting data to CSV completed succesfully!

@@ -1,0 +1,35 @@
+---  # Three dashes mean start of the YAML file
+# MAIN CONFIGURATION FILE #
+
+# Logging info: https://docs.python.org/3/library/logging.html #
+
+# Setting-up a LOGGER:
+  logger:
+    file: "log_file.log"
+    encoding: "utf-8"
+    level: logging.DEBUG
+    #format: "%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s"
+    format: "%(asctime)s | %(levelname)s | line: %(lineno)d | %(funcName)s: %(message)s"  # (lineno) is a line number
+    #datefmt: "%m/%d/%Y %I:%M:%S %p"
+
+# Files to load:
+  files:
+    jobs: "dataset/job_postings.csv"
+    companies: "dataset/company_details/companies.csv"
+    industries: "dataset/company_details/company_industries.csv"
+    salaries: "dataset/job_details/salaries.csv"
+    employee_counts: "dataset/company_details/employee_counts.csv"
+    job_skills: "dataset/job_details/job_skills.csv"
+    skills_map: "dataset/maps/skills.csv"
+  
+  delimiter_import: ","
+  delimiter_export: "`"
+
+# Dataframes to check for duplicates:
+  dataframes_to_check:
+    jobs: "job_id"
+    companies: "company_id"
+    salaries: "job_id"
+    industries: "company_id"
+    employee_counts: "company_id"
+    skills: "job_id"
