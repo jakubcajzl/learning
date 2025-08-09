@@ -51,10 +51,24 @@ Agenda:
     <img width="1480" height="727" alt="image" src="https://github.com/user-attachments/assets/ddf1be24-2ec2-47c4-949f-fca940fdba07" />
     - Within a Catalog you can create not only a table Schema (database), but also a **Model** (ML model) or Feature functions or a Volume. This all is with versioning - i.e. saving all previous versions of models, etc.
  
-- **Delta Lake**:
-  - What is Delta Lake?
-    <img width="1501" height="687" alt="image" src="https://github.com/user-attachments/assets/22fc991d-ffe3-45be-be1d-96e26a4cf678" />
+- **Delta Lake** (what is Delta Lake?)
+   - A data protocol or format that unifies data management on top of cloud storage (Azure, GC, AWS S3, ...)
+   - Leverages the Parquet format
+   - Open-source, so the user is not locked-in
+      
+   <img width="1501" height="687" alt="image" src="https://github.com/user-attachments/assets/22fc991d-ffe3-45be-be1d-96e26a4cf678" />
     
+   <img width="1557" height="897" alt="image" src="https://github.com/user-attachments/assets/a548d9a8-4075-409e-85e1-cee1d93bcabc" />
+    
+   - Key features:
+     <img width="1513" height="687" alt="image" src="https://github.com/user-attachments/assets/9e77efda-fb6b-4ff2-9ba7-0c48cee85b06" />
+      
+   - Delta Lake connectors:
+     <img width="1556" height="718" alt="image" src="https://github.com/user-attachments/assets/90571267-1cf7-4dcf-9234-48603f0e76bc" />
+
+- **Data ingestion in Databricks** (Medallion architecture):
+
+   <img width="1544" height="890" alt="image" src="https://github.com/user-attachments/assets/11c92963-faea-4377-95df-99da430eab1d" />
 
 
 
