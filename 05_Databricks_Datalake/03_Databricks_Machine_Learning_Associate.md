@@ -1,6 +1,68 @@
 # Databricks Machine Learning Associate
 
--
+## Data Preparation for Machine Learning
+
+Contents:
+1. Databricks Data Intelligence Platform for machine learning
+2. Data storage and governance in Databricks
+3. EDA and feature engineering using Spark and visualization tools including data profiling and visualization to explore and analyze ML data
+4. Data pre-processing - handling missings, categorical encoding and standardization
+5. Feature engineering - leveraging Unity catalog as a Feature store - storing and retrieving features
+
+Agenda:
+1. Managing and exploring data
+   - Managing and exploring data in the Lakehouse
+3. Data preparation and feature engineering
+   - Fundamentals of data preparation and feature engineering
+   - Data imputation
+   - Data categorical encoding
+   - Data standardization
+5. Feature store
+   - Introduction to Feature store
+  
+### Managing and Exploring data
+- Databricks Data Intelligence platform:
+
+<img width="1338" height="893" alt="image" src="https://github.com/user-attachments/assets/54dc2915-f8f0-44cf-9c13-d9526d5d6ea6" />
+
+- Main aim of Databricks Data Intelligence platform is that it is supposed to serve all data practitioners - ML engineers, Data engineers, Data analysts, Data governance
+- Mosaic AI - is an end-to-end AI used for MLOps, model serving, monitoring and governance. It can do custom models and RAGs. It is open-source, built on Delta lake and MLflow.
+
+<img width="1522" height="885" alt="image" src="https://github.com/user-attachments/assets/0494c795-9556-437f-9dda-aa8e96af7ee2" />
+
+<img width="1635" height="884" alt="image" src="https://github.com/user-attachments/assets/b0f151be-04cd-4a50-9cc5-017e8bf75a8f" />
+
+<img width="1643" height="902" alt="image" src="https://github.com/user-attachments/assets/66b52cdb-f834-4585-ab6c-bbacc9ba7c68" />
+
+<img width="1564" height="899" alt="image" src="https://github.com/user-attachments/assets/4523ed15-5ca1-4ba3-a939-8ca1c0719e54" />
+
+<img width="1562" height="896" alt="image" src="https://github.com/user-attachments/assets/360021ee-1ab7-4f57-a122-515222ed83f3" />
+
+- **Unity catalog**
+  - Background **motivation**:
+    <img width="1637" height="899" alt="image" src="https://github.com/user-attachments/assets/e7164163-3b13-46ca-8ebf-9d9f6ea30556" />
+
+  - **Unity catalog** offers:
+    - **Unified governance** for data (tables and files), codes (notebooks), models, dashboards, AI, etc.
+    - Unified visibility into all aspects of data
+    - Data discovery, access controls, lineage, monitoring, auditing and sharing
+
+  - The **3-level namespace** of Unity Catalog:
+    <img width="1480" height="727" alt="image" src="https://github.com/user-attachments/assets/ddf1be24-2ec2-47c4-949f-fca940fdba07" />
+    - Within a Catalog you can create not only a table Schema (database), but also a **Model** (ML model) or Feature functions or a Volume. This all is with versioning - i.e. saving all previous versions of models, etc.
+ 
+- **Delta Lake**:
+  - What is Delta Lake?
+    <img width="1501" height="687" alt="image" src="https://github.com/user-attachments/assets/22fc991d-ffe3-45be-be1d-96e26a4cf678" />
+    
+
+
+
+### Data preparation and Feature engineering
+- 
+
+### Feature store
+- 
 
 
 
@@ -12,8 +74,7 @@
 
 
 
-
-
+## Old content
 - Creator of: 
   - Data Lakehouse
   - Delta Lake
