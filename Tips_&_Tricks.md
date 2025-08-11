@@ -1,6 +1,7 @@
 # SQL tips and tricks
 
-- Rounding correctly the numbers that have very small deviation from a given precision - e.g. rounding 17.249999999 to 17.25 using a 3-decimal rounding:
+- Rounding numbers that have a very small deviation from a given precision, using addition of a very small decimal number.
+  - Example: rounding 17.249999999 to 17.25 using a 3-decimal rounding:
   ``` SQL
   cast( round(no_ad_hoc_volume + 0.000001, 3) as decimal(20,3) ) as column_01
   ```
