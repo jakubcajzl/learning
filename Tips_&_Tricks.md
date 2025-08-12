@@ -14,3 +14,12 @@
 # Python tips and tricks
 
 
+# PySpark tips and tricks:
+
+- Settings tips:
+  - spark.sql.adaptive.enabled = True
+  - spark.sql.adaptive.skewJoin.enabled = True
+  - spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes = 64MB
+  - spark.driver.memory = 4g
+  - spark.executor.memory = 20g
+
