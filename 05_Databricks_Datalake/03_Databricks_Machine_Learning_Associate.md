@@ -70,6 +70,19 @@ Agenda:
 
    <img width="1544" height="890" alt="image" src="https://github.com/user-attachments/assets/11c92963-faea-4377-95df-99da430eab1d" />
 
+#### DEMO: Load and Explore data
+- Displaying summary statistics using Databricks utility tool:
+  <img width="1085" height="463" alt="image" src="https://github.com/user-attachments/assets/cc80c38f-caf4-42a9-8fc7-a066273017b5" />
+
+- Time-travel with Delta = Reverting changes:
+   ``` python
+   telco_bronze_original = (
+      spark.read
+        .option('versionAsOf', 0)
+        .table('telco_bronze')
+   )
+   ```
+
 
 
 ### Data preparation and Feature engineering
