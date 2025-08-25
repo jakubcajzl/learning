@@ -17,6 +17,7 @@
 # PySpark tips and tricks:
 
 - Settings tips:
+  - spark.shuffle.service.enabled = True
   - spark.sql.adaptive.enabled = True
   - spark.sql.adaptive.skewJoin.enabled = True
   - spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes = 64MB
