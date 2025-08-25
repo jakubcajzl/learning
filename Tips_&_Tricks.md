@@ -1,9 +1,9 @@
 # SQL tips and tricks
 
 - Rounding numbers that have a very small deviation from a given precision, using addition of a very small decimal number.
-  - Example: rounding 17.249999999 to 17.25 using a 3-decimal rounding:
+  - Example: rounding 17.249999001 to 17.250000 using a 6-decimal rounding:
   ``` SQL
-  cast(round(column_01 + 0.000001, 3) as decimal(20,3)) as column_01
+  cast(round(column_01 + 0.000001, 6) as decimal(20,6)) as column_01
   ```
   - This is important for example when comparing numbers from different sources - the numbers are compared precisely, therefore even 0.0000001 is a difference that can trigger a difference flag.
 
