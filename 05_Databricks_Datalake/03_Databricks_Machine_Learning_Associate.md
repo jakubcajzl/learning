@@ -72,6 +72,14 @@ Agenda:
 
 #### DEMO: Load and Explore data
 
+- What will be done:
+   - Read data from Delta table
+   - Manage data permissions
+   - Show summary statistics
+   - Use Data profiler to explore data
+   - Time-travel to older versions of data
+   - Revert to previous versions of the Delta table
+
 - Infering schema from a string:
 
   <img height="500" alt="image" src="https://github.com/user-attachments/assets/a6042fe6-85f2-4ba7-a4b6-4a25f7dbe85a" />
@@ -102,16 +110,92 @@ Agenda:
   display(telco_pdf)
   ```
 
-- Time-travel with Delta = Reverting changes:
+- Creating a **Correlation heatmap**:
+  ``` python
+  import seaborn as sns
+  import matplotlib.pyplot as plt
+
+  num_columns = ["column01","column02","column03"]
+
+  plt.figure(figsize=(10,6))
+  sns.heatmap(telco_pdf[num_columns].corr(), annot=True, cmap='coolwarm', linewidths=.5)
+  plt.title("Title of the plot")
+  plt.show()
+  ```
+
+  <img height="500" alt="image" src="https://github.com/user-attachments/assets/f7f0e1da-ad62-4fc1-9a53-5a7f50ad82dd" />
+
+
+- Creating a **Pairplot** to analyze relationships between variables using a target column as a hue:
+  ``` python
+  # Selecting numerical columns:
+  numerical_colummns = ['column01','column02','column03']
+  telco_pp = telcopdf[selected_columns + ['Churn']]
+
+  # Creating Pairplot:
+  sns.pairplot(telco_pp, hue='Churn', diag_kind='kde')
+  plt.suptitle('Pairplot for Telco dataset', y=1.02)
+  plt.show()
+  ```
+
+  <img height="700" alt="image" src="https://github.com/user-attachments/assets/c215de53-c38f-49e1-abf6-ebde38ca04ee" />
+
+- Creating a **Boxplot** for analyzing distributions:
+  ``` python
+  plt.figure(figsize=(10,6))
+  sns.boxplot(x='Churn', y='MonthlyCharges', data=telco_pdf)
+  plt.title('Distribution of Monthly charges')
+  plt.show()
+  ```
+
+  <img height="500" alt="image" src="https://github.com/user-attachments/assets/73593b3a-8db5-4a83-9830-6cfd8bb93e57" />
+
+- Writing dataframe to a **Delta table** (Bronze schema):
+  ``` python
+  table_name_bronze = 'telco_missing_bronze'
+  telco_df.write.saveAsTable(table_name_bronze)
+  ```
+
+  - Table is now also registered in the Unity catalog
+
+- Time-travel with Delta (= Reverting changes):
    ``` python
+   # Retrieving a version 0 of the table:
    telco_bronze_original = (
-      spark.read
+      spark
+        .read
         .option('versionAsOf', 0)
+        .table('telco_bronze')
+   )
+
+   # Retrieving a version of the table using a Timestamp:
+   telco_bronze_original = (
+      spark
+        .read
+        .option('timestampAsOf', '2025-08-01 22:13:15')
         .table('telco_bronze')
    )
    ```
 
+- Describing a table history using SQL:
+  ``` python
+  DESCRIBE HISTORY table_name
+  ```
 
+- Viewing a schema of a table:
+  - Using Python:
+    ``` python
+    spark.table('table_name').printSchema()
+    ```
+  - Using SQL:
+    ``` python
+    DESCRIBE table_name
+    ```
+
+- Over-writing a Delta table (Bronze schema):
+  ``` python
+  telco_df.write.mode('overwrite').option('overwriteSchema', True).saveAsTable(table_name_bronze)
+  ```
 
 ### Data preparation and Feature engineering
 - 
