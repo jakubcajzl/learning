@@ -71,8 +71,36 @@ Agenda:
    <img width="1544" height="890" alt="image" src="https://github.com/user-attachments/assets/11c92963-faea-4377-95df-99da430eab1d" />
 
 #### DEMO: Load and Explore data
-- Displaying summary statistics using Databricks utility tool:
+
+- Infering schema from a string:
+
+  <img height="500" alt="image" src="https://github.com/user-attachments/assets/a6042fe6-85f2-4ba7-a4b6-4a25f7dbe85a" />
+
+- Displaying a summary statistics using Databricks utility tool:
   <img width="1085" height="463" alt="image" src="https://github.com/user-attachments/assets/cc80c38f-caf4-42a9-8fc7-a066273017b5" />
+
+  - Other ways:
+    ``` python
+    # Basic statistics:
+    display(telco_df.summary())
+    # Advanced statistics:
+    display(telco_df.describe())
+    ```
+
+- Analyzing data aggregates:
+  ``` python
+  # Counts:
+  display(telco_df.groupBy("PaymentMethod").count().orderBy("count", ascending=False))
+
+  # Averages:
+  display(telco_df.groupBy("PaymentMethod").avg("TotalCharges"))
+  ```
+
+- Converting Spark dataframe to Pandas dataframe:
+  ``` python
+  telco_pdf = telco_df.toPandas()
+  display(telco_pdf)
+  ```
 
 - Time-travel with Delta = Reverting changes:
    ``` python
