@@ -198,11 +198,24 @@ Agenda:
   ```
 
 ### Data preparation and Feature engineering
-- 
+- What will be done:
+  - Data preparation and splitting for ML models (incl. holdout and cross-validation approaches)
+  - Handling of missing values and importance of indicator variables
+  - Encoding categorical features
+  - Feature standardization and result interpretation
+  - Building data imputation pipeline
+  - Developing advanced feature engineering pipeline
+ 
+<img width="1689" height="687" alt="image" src="https://github.com/user-attachments/assets/8aff4b8d-ea9e-431c-a0aa-2b3ba5cd6e6d" />
+
+- Data standardization = ensuring that all the features have consistent scale - e.g.: mean = 0, std. deviation = 1
+- Feature engineering = creating new features from existing ones or modifying exisiting features. E.g. converting categorical to numerical (one-hot encoding), creating interaction terms, scaling features (e.g. log-scale), binning numerical features to categorical ones, extracting year/quarter/month/day from timestamp, converting text to numerical features (TF-IDF, word embeddings), calculating distances between certain points from location data, ...
+- Feature extraction = transforming raw data into meaningful features, e.g.: converting text to numerical features (TF-IDF, word embeddings)
+- Dimensionality reduction = 
+
 
 ### Feature store
 - 
-
 
 
 
