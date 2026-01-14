@@ -208,12 +208,12 @@ Agenda:
  
 <img width="1689" height="687" alt="image" src="https://github.com/user-attachments/assets/8aff4b8d-ea9e-431c-a0aa-2b3ba5cd6e6d" />
 
-- Data cleaning = identifying and tackling errors and inconsistencies in the source dataset - i.g. removing duplicates, handling missing values (NULLs, "") by removing records or imputing values, removing outliers, ... 
-- Data standardization = ensuring that all the features have consistent scale - e.g.: mean = 0, std. deviation = 1
-- Accuracy optimization = optimizing data to have higher model accuracy
-- Feature engineering = removing unnecessary or not-needed columns, creating new features from existing ones or modifying exisiting features. E.g. converting categorical to numerical (one-hot encoding), creating interaction terms, scaling features (e.g. log-scale), binning numerical features to categorical ones, extracting year/quarter/month/day from timestamp, converting text to numerical features (TF-IDF, word embeddings), calculating distances between certain points from location data, ...
-- Feature extraction = transforming raw data into meaningful features, e.g.: converting text to numerical features (TF-IDF, word embeddings)
-- Dimensionality reduction = 
+- **Data cleaning** = identifying and tackling errors and inconsistencies in the source dataset - i.g. removing duplicates, handling missing values (NULLs, "") by removing records or imputing values, removing outliers, ... 
+- **Data standardization** = ensuring that all the features have consistent scale - e.g.: mean = 0, std. deviation = 1
+- **Accuracy optimization** = optimizing data to have higher model accuracy - e.g. adjusting class imbalances, etc.
+- **Feature engineering** = transforming raw data into more suitable format for ML models, e.g.: removing unnecessary or not-needed columns, creating new features from existing ones or modifying exisiting features, converting categorical to numerical (one-hot encoding), creating interaction terms, scaling features (e.g. log-scale), binning numerical features to categorical ones, extracting year/quarter/month/day from timestamp, converting text to numerical features (TF-IDF = Term Frequency - Inverse Document Frequency, word embeddings, ...), calculating distances between certain points from location data, ...
+- **Feature extraction** = transforming raw data into a set of features that better represent the underlying pattern, e.g.: converting text to numerical features (TF-IDF, word embeddings)
+- **Dimensionality reduction** = 
 
 
 ### Feature store
