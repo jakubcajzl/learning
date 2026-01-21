@@ -7,6 +7,13 @@
   ```
   - This is important for example when comparing numbers from different sources - the numbers are compared precisely, therefore even 0.0000001 is a difference that can trigger a difference flag.
 
+- Rolling dates:
+``` SQL
+select task_id, start_date, end_date
+from tasks
+where (end_date - start_date) > INTERVAL 5 DAY
+```
+
 
 # Power BI tips and tricks
 
